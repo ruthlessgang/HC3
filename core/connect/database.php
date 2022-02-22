@@ -1,10 +1,10 @@
 <?php 
 
 $config = array(
-	'host'		=> env('DB_HOSTNAME'),
-	'username' 	=> env('DB_USERNAME'),
-	'password' 	=> env('DB_PASSWORD'),
-	'dbname' 	=> env('DB_DATABASE')
+	'host'		=> getenv('DB_HOSTNAME'),
+	'username' 	=> getenv('DB_USERNAME'),
+	'password' 	=> getenv('DB_PASSWORD'),
+	'dbname' 	=> getenv('DB_DATABASE')
 );
 /*
  'mysql' => [

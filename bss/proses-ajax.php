@@ -1,9 +1,9 @@
 <?php
 // konfigurasi database
-$host       =   "localhost";
-$user       =   "root";
-$password   =   "P@ssw0rd";
-$database   =   "db_hc3";
+$host       =  env('DB_HOSTNAME');
+$user       =  env('DB_USERNAME');
+$password   =  env('DB_PASSWORD');
+$database   =  env('DB_DATABASE')
 // perintah php untuk akses ke database
 $koneksi = mysqli_connect($host, $user, $password, $database);
 
