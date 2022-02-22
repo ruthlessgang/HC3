@@ -23,7 +23,7 @@ $con = array(
                 PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
             ]) : [],
 */
-$db = new mysqli($con[host], $con[username], $con[password], $con[dbname]);
+$db = new mysqli($con['host'], $con['username'], $con['password'], $con['dbname']);
 if (mysqli_connect_errno()) {
 	printf("MySQLi connection failed: ", mysqli_connect_error());
 	exit();
