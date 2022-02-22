@@ -22,7 +22,7 @@ RUN set -ex; \
   } > "$PHP_INI_DIR/conf.d/cloud-run.ini"
 
 # Copy in custom code from the host machine.
-WORKDIR /var/www/
+WORKDIR /var/www/html
 COPY . ./
 
 # Use the PORT environment variable in Apache configuration files.
