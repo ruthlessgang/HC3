@@ -1,6 +1,6 @@
 <?php 
 
-$config = array(
+$con = array(
 	'host'		=> getenv('DB_HOSTNAME'),
 	'username' 	=> getenv('DB_USERNAME'),
 	'password' 	=> getenv('DB_PASSWORD'),
@@ -23,8 +23,20 @@ $config = array(
                 PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
             ]) : [],
 */
+$db = new mysqli($con[host], $con[username], $con[password], $con[dbname]);
+if (mysqli_connect_errno()) {
+	printf("MySQLi connection failed: ", mysqli_connect_error());
+	exit();
+}
+
+// Change character set to utf8
+if (!$db->set_charset('utf8')) {
+	printf('Error loading character set utf8: %s\n', $db->error);
+}
+
+/*
 $db = new PDO('mysql:host=' . $config['host'] . ';dbname=' . $config['dbname'], $config['username'], $config['password']);
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
+*/
 
 ?>
