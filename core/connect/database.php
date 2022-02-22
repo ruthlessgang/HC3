@@ -4,7 +4,7 @@ $username=getenv('DB_USERNAME');
 $password 	= getenv('DB_PASSWORD');
 $dbname 	= getenv('DB_DATABASE');
 $db = new PDO(
-  'mysql:unix_socket=/cloudsql/$host;dbname=$dbname;charset=utf8',  
+  'mysql:unix_socket=/cloudsql/'.$host.';dbname='.$dbname.';charset=utf8',  
   '$username',
   '$password'
 );
