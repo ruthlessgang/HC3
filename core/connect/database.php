@@ -1,8 +1,12 @@
 <?php 
+$host	=getenv('DB_HOSTNAME');
+$username=getenv('DB_USERNAME');
+$password 	= getenv('DB_PASSWORD');
+$dbname 	= getenv('DB_DATABASE');
 $db = new PDO(
-  'mysql:unix_socket=/cloudsql/bss-sandbox-portalhc-1:asia-southeast2:bss-sandbox-portalhc-1;dbname=db_hc3;charset=utf8',  
-  'root',
-  'P@ssw0rd'
+  'mysql:unix_socket=/cloudsql/$host;dbname=$dbname;charset=utf8',  
+  '$username',
+  '$password'
 );
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 /*
