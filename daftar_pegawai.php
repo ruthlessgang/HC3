@@ -1,0 +1,40 @@
+<?
+include_once 'core/init.php';
+?>
+<input type="text" name="cari" id="cari" onKeyPress="return disableEnterKey(event)" />
+<input type="button" name="submit" value="cari" onClick="findRecord()" /><br /><br />
+
+  <script language="javascript">
+					
+		// untuk menghapus baris atau data pada table pegawai
+		function findRecord(){ // ID dari record pegawai dikirimkan sebagai parameter
+		   $.post(
+			  'cari_pegawai.php', {cari: $("#cari").val() },
+			  function(response){
+				//if(response == 'ok')  // jika respon dari delete.php adalah 'ok' 
+				  $('#result').html(response);  // hapus 1 baris
+				//else 
+				 // alert('Delete gagal');
+			  }
+		   );
+		}
+	
+		function disableEnterKey(e){
+			 var key;
+			 if(window.event)
+				  key = window.event.keyCode;     //IE
+			 else
+				  key = e.which;     //firefox
+			 if (key == 13) {
+				  findRecord();
+				  return false;
+			 } else
+				  return true;
+		} 
+  </script>
+  
+<div id="result"> 
+
+	<?php include "cari_pegawai.php"; ?>
+	
+</div>

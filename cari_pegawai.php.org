@@ -1,0 +1,72 @@
+<?
+require 'core/init.php';	
+?>
+	<script language="javascript">
+		function getSelected(no_int, emp_id, emp_name, emp_posisi, entity){	
+			
+			var args = new Array();
+			
+			for (var i = 0; i < arguments.length; i++)
+				window.parent.my_variable[i+1] = arguments[i];
+				
+			window.parent.passingToParent();
+		}
+
+  </script>
+	<style>
+	table {
+	 border-collapse: collapse;
+	 width: 100%;
+	}
+	th, td {
+	 text-align: left;
+	 padding: 8px;
+	}
+	tr:nth-child(even){background-color: #f2f2f2}
+	th {
+	 background-color: #4CAF50;
+	 color: white;
+	}
+	</style>
+
+<?php
+
+	if (empty($_POST["cari"]))
+		$_POST["cari"] = "";
+	
+	$mysqli = new mysqli("localhost", "root", "P@ssw0rd", "helpdesk");
+	
+	 $ssql = "SELECT * FROM employee 
+	 WHERE emp_id like '%$_POST[cari]%'
+	 or emp_name like '%$_POST[cari]%'";
+	 $query = $mysqli->query($ssql);
+
+?>
+<table bgcolor="#000000" cellspacing="1" cellpadding="3">	
+	<tr bgcolor="#DDDDDD">
+		<th>Emp Id</th>
+		<th>Employee Name</th>
+		<th>Entity ID</th>
+		<th>Entity</th>
+		<th>Position</th>
+		<th>Branch</th>
+	</tr>
+	<?php while($row = $query->fetch_object()): ?>
+	
+	<tr bgcolor="#FFFFFF">
+		<!-- fungsi selectPegawai di deklarasikan di index.html dan file ini bisa memanggilnya selama file ini
+			 dipanggil oleh thickbox dari index.html, fungsi dari selectPegawai adalah untuk memasukan nilai
+			 NIP dan nama pegawai dari masing-masing baris di daftar pegawai ini -->
+		<td align="center">
+			<a href="javascript:getSelected('<?=$row->no_int?>','<?=$row->emp_id?>','<?=$row->emp_name?>','<?=$row->idcustomer?>','<?=$row->entity?>','<?=$row->emp_posisi?>')">
+				<?=$row->emp_id?>
+			</a>
+		</td>
+		<td><?=$row->emp_name?></td>
+		<td align="center"><?=$row->idcustomer?></td>
+		<td align="center"><?=$row->entity?></td>
+		<td><?=$row->emp_posisi?></td>
+		<td><?=$row->branch?></td>
+	</tr>
+	<?php endwhile; ?>
+</table>
