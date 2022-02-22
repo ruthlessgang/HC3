@@ -5,8 +5,8 @@ $password 	= getenv('DB_PASSWORD');
 $dbname 	= getenv('DB_DATABASE');
 $db = new PDO(
   'mysql:unix_socket=/cloudsql/'.$host.';dbname='.$dbname.';charset=utf8',  
-  '$username',
-  '$password'
+  $username,
+  $password
 );
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 /*
