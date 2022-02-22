@@ -1,12 +1,18 @@
 <?php 
-
+$db = new PDO(
+  'mysql:unix_socket=/cloudsql/bss-sandbox-portalhc-1:asia-southeast2:bss-sandbox-portalhc-1;dbname=db_hc3;charset=utf8',  
+  'root',
+  'P@ssw0rd'
+);
+$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+/*
 $con = array(
 	'host'		=> getenv('DB_HOSTNAME'),
 	'username' 	=> getenv('DB_USERNAME'),
 	'password' 	=> getenv('DB_PASSWORD'),
 	'dbname' 	=> getenv('DB_DATABASE')
 );
-/*
+
  'mysql' => [
             'driver' => 'mysql',
             'database' => env('DB_DATABASE', 'forge'),
@@ -23,6 +29,7 @@ $con = array(
                 PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
             ]) : [],
 */
+/*
 $db = new mysqli($con['host'], $con['username'], $con['password'], $con['dbname']);
 if (mysqli_connect_errno()) {
 	printf("MySQLi connection failed: ", mysqli_connect_error());
@@ -34,9 +41,11 @@ if (!$db->set_charset('utf8')) {
 	printf('Error loading character set utf8: %s\n', $db->error);
 }
 
-/*
+
 $db = new PDO('mysql:host=' . $config['host'] . ';dbname=' . $config['dbname'], $config['username'], $config['password']);
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 */
+
+
 
 ?>
