@@ -344,12 +344,13 @@ if (isset($_POST['submit']))
 			<td> <input type='text' size='50' name='email' maxlength="50" value='<?php echo $ticket['email']; ?>'> </td>
 		</tr>
 		<?php
-		if (!empty($ticket['filename'])){
+		if (!empty($ticket['file_name'])){
 			?>
 		<tr>
 			<td> Attacment </td><td> : </td>
-			<td><a href="uploads/<?php echo $ticket['filename']?>" class="btn btn-primary"><span class="glyphicon glyphicon-download"></span> Download</a></td>
-			<!-- <td align="center"><?php echo "<img src='uploads/$ticket[filename]' width='70' height='70' />";?> <?php echo $ticket['filename']?></td> -->
+			
+			<td><a href="uploads/<?php echo $ticket['file_name']?>" class="btn btn-primary" target="_blank"><span class="glyphicon glyphicon-download" ></span> Download</a></td>
+			<td align="center"><?php echo "<img src='uploads/$ticket[file_name]' width='70' height='70' />";?> <?php echo $ticket['filename']?></td> 
 		</tr>
 		<?php }?>
 	</table>
@@ -397,11 +398,7 @@ if (isset($_POST['submit']))
 				 <input type="hidden" name="closeddate" value="<?php echo $ticket['closeddate']; ?>"> 
 			</td>
 		</tr>
-		<tr valign="top">
-			<td> Resolution* </td><td> : </td>
-			<td>
-			<input class="form-control" name="iuploadfile" type="file"> </td>
-		</tr>
+
 		<tr>
 		</tr>
 		<tr>

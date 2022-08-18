@@ -29,6 +29,19 @@ if (isset($_POST['submit']))
 	$email 			= $_POST['email'];
 	$problemsummary	= $_POST['problemsummary'];
 	$problemdetail	= $_POST['problemdetail'];
+	
+	$path = '../uploads/'; // upload directory
+	$img = $_FILES['file_name']['name'];
+	$tmp = $_FILES['file_name']['tmp_name'];
+	// get uploaded file's extension
+	$ext = strtolower(pathinfo($img, PATHINFO_EXTENSION));
+			// can upload same file using rand function
+	$final_file = rand(1000,1000000).$img;
+			// check's valid format
+	$path = $path.strtolower($final_file); 
+	move_uploaded_file($tmp,$path);
+	$upload_date = date("Y-m-Y");
+	$id_ticket 	= $ticketnumber;
 	$ticketstatus	= 'Open'; //ketika pertama kali dibuat, status="Assigned" ke salah satu teknisi
 	$assignee		= $_POST['idassignee'];
 	$user_assignee	= $users->userdata($assignee);
@@ -85,6 +98,7 @@ if (isset($_POST['submit']))
 	$tickets->log_tickets($id,$sla,$reporteddate,$reportedby,$telp,$email,$problemsummary,$problemdetail,$ticketstatus,$assignee,$assigneddate,$pendingby, $pendingdate, $resolution,$resolvedby,$resolveddate,$closedby,$closeddate,$changes,$changeby);
 	$emails->add_email($id,$senddate,$email_assignee,$emailcc,$emailbcc,$emailsubject,$message,$emailstatus);
 	$emails->add_sla_remainder($id,$ticketnumber,$slasenddate,$email_assignee,$emailcc,$emailbcc,$emailsubject,$message);
+	$uploads->add_upload($path,$id_ticket,$upload_date,$tmp);
 	include '../email/smtp.php';	
 	//include 'email/smtp_adm.php';
 	//$result=$emails->send_new_ticket();	
@@ -117,7 +131,7 @@ if (isset($_POST['submit']))
             <div class="signup-content">
                
                 <div class="signup-form">
-                    <form method="POST" class="register-form" id="register-form">
+                    <form method="POST" class="register-form" id="register-form" enctype="multipart/form-data">
                         <h2>Input E-Form HC3</h2>
                         <div class="form-row">
                             <div class="form-group">
@@ -214,6 +228,11 @@ if (isset($_POST['submit']))
 							<!--<input type="text" name="problemdetail" placeholder="Pertanyaan Detail" class="form-control" required/>		-->					
 							<textarea class="textarea" name="problemdetail" placeholder="Pertanyaan Detail" required/></textarea> 
                         </div>
+						<div class="form-group">
+                            <label for="attachment">Attachment:</label>
+							<input id="file_name" required type="file" accept=".xlsx,.xls" name="file_name" value="<?php echo isset($file_name)? $file_name: '' ?>"/>
+                        </div>
+						
 						
 							<!-- JS -->
                         <div class="form-submit">

@@ -90,7 +90,7 @@ class Tickets{
 	}	
 	public function ticket_data($id)
 	{	$query = $this->db->prepare("SELECT * FROM `tickets` t 
-left join uploads u ON u.tickets_id=t.id WHERE t.id= ?");
+left join uploads u ON u.id_ticket=t.ticketnumber WHERE t.id= ?");
 		$query->bindValue(1, $id);
 		try{
 			$query->execute();

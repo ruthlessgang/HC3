@@ -137,11 +137,12 @@ $ticket	= $tickets->ticket_data($id);
 			<td> <?php echo $ticket['email']; ?> </td>
 		</tr>
 		<?php
-		if (!empty($ticket['filename'])){
+		if (!empty($ticket['file_name'])){
 			?>
 		<tr>
 			<td> Attacment </td><td> : </td>
-			<td><a href="uploads/<?php echo $ticket['filename']?>" class="btn btn-primary"><span class="glyphicon glyphicon-download"></span> Download</a></td>
+			
+			<td><a href="uploads/<?php echo $ticket['file_name']?>" class="btn btn-primary" target="_blank"><span class="glyphicon glyphicon-download" ></span> Download</a></td>
 			<!-- <td align="center"><?php echo "<img src='uploads/$ticket[filename]' width='70' height='70' />";?> <?php echo $ticket['filename']?></td> -->
 		</tr>
 		<?php }?>

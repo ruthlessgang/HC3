@@ -19,13 +19,13 @@ class Uploads{
 			die($e->getMessage());
 		}
 	}
-	public function add_upload($filename,$uploadtime,$tickets_id)
+	public function add_upload($path,$id_ticket,$upload_date)
 	{	$current  = time();
-		$querystring = "INSERT INTO `uploads` (`filename`,`uploadtime`,`tickets_id`) VALUES ( ?, ?, ?)";
+		$querystring = "INSERT INTO `uploads` (`file_name`,`id_ticket`,`upload_date`) VALUES ( ?, ?, ?)";
 		$query 	= $this->db->prepare($querystring);
-	 	$query->bindValue(1, $filename);
-		$query->bindValue(2, $uploadtime);
-		$query->bindValue(3, $tickets_id);
+	 	$query->bindValue(1, $path);		
+		$query->bindValue(2, $id_ticket);
+		$query->bindValue(3, $upload_date);
 	 	try{
 			$query->execute();
 	 	}catch(PDOException $e){
