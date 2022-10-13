@@ -24,7 +24,7 @@ if (isset($_POST['submit']))
 	<title>Search Tickets</title>
 	<meta charset="utf-8" />
 	<style type="text/css">
-		body{background-image:url('images/corner.jpg');background-repeat:no-repeat;background-attachment:fixed;}
+		body{background-image:url('https://storage.googleapis.com/portalhc-statics-1/images/corner.jpg');background-repeat:no-repeat;background-attachment:fixed;}
 		.breadcrumb{font-size:12px;color:#0000A0;font-family: Arial, Helvetica, sans-serif;}
 	</style>
   	<link rel="stylesheet" href="css/datatable.css" />

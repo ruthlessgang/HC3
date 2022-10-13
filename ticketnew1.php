@@ -67,10 +67,10 @@ Helpdesk";
 <html>
 <head>
 	<title>New Ticket</title>
-	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="https://storage.googleapis.com/portalhc-statics-1/images/favicon.ico" type="https://storage.googleapis.com/portalhc-statics-1/image/x-icon">
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 	<style type="text/css">
-		body{font-size:12px;background-image:url('images/corner.jpg');background-repeat:no-repeat;background-attachment:fixed;font-family: Arial, Helvetica, sans-serif;}
+		body{font-size:12px;background-image:url('https://storage.googleapis.com/portalhc-statics-1/images/corner.jpg');background-repeat:no-repeat;background-attachment:fixed;font-family: Arial, Helvetica, sans-serif;}
 		.breadcrumb{font-size:12px;color:#0000A0;}
 		.formtable {text-align:left; font-size:12px;color:#000000; background-color:#f0f0f0;padding:10px;width:600px; }
 		.errormsg {font-size:10pt;color:#ff0000;text-align:left;}
@@ -157,7 +157,7 @@ $(document).ready(function(){
 		$(document).ready(function(){
 			$("#reporteddate").datepicker
 			({dateFormat:"dd-M-yy",changeMonth:true,changeYear:true,showOn:'button',
-			buttonImage:"images/calendar2.gif",buttonImageOnly:true})
+			buttonImage:"https://storage.googleapis.com/portalhc-statics-1/images/calendar2.gif",buttonImageOnly:true})
 			
 			
 			//.next('button').text('.').button({icons:{primary:'ui-icon-calendar'},text:false});
@@ -216,7 +216,7 @@ $(document).ready(function(){
 			<td> Employee ID </td><td> : </td>
 			<td> <input type='text' id="emp_id" size='8' name='emp_id' maxlength="8" readonly>
 			<a href="daftar_pegawai.php" class="ajax" onClick="my_variable[0]='no_int,emp_id,emp_name,idcustomer,entity,emp_posisi,emp_telp'">
-			<img src="images/button_search.png" border="0" /></a></td>
+			<img src="https://storage.googleapis.com/portalhc-statics-1/images/button_search.png" border="0" /></a></td>
 			
 		</tr>
 		

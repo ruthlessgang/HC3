@@ -1,5 +1,7 @@
 <?php 
 error_reporting(0);
+## error_reporting(E_ALL);
+require 'storage.php';
 require 'core/init.php';
 $general->logged_in_protect();
 if (empty($_POST) === false)
@@ -24,17 +26,17 @@ if (empty($_POST) === false)
 			exit();
 		}
 	}
-} 
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<title>Login HC3</title>
-	<link rel="icon" href="images/hc3favicon.ico" type="image/x-icon">
+	<link rel="icon" href="https://storage.googleapis.com/portalhc-statics-1/images/hc3favicon.ico" type="image/x-icon">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
@@ -59,17 +61,17 @@ if (empty($_POST) === false)
 <body>
 	
 	<div class="limiter">
-		<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
+		<div class="container-login100" style="background-image: url('https://storage.googleapis.com/portalhc-statics-1/images/bg-01.jpg');">
 			<div class="wrap-login100">
 				<form class="login" class="login100-form validate-form" method="post">
 					<span class="login100-form-logo1">
 						<!--<i class="zmdi zmdi-landscape"></i>
-						<img src="images/logo.png" height="40" width="40">  -->
+						<img src="https://storage.googleapis.com/portalhc-statics-1/images/logo.png" height="40" width="40">  -->
 					</span>
 					
 					<span class="login100-form-logo">
 						<!--<i class="zmdi zmdi-landscape"></i> -->
-						<img src="images/cs.png" height="140" width="140">
+						<img src="https://storage.googleapis.com/portalhc-statics-1/images/cs.png" height="140" width="140">
 					</span>
 
 					<span class="login100-form-title p-b-34 p-t-27">

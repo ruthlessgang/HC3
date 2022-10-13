@@ -16,7 +16,7 @@ $tickets_resolved 	= count($ticket3);
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
 	<style type="text/css">
-		body{margin:10px;background-image:url('images/corner.jpg');background-repeat:no-repeat;background-attachment:fixed;}
+		body{margin:10px;background-image:url('https://storage.googleapis.com/portalhc-statics-1/images/corner.jpg');background-repeat:no-repeat;background-attachment:fixed;}
 	</style>
 </head>
 <body>
@@ -24,7 +24,7 @@ $tickets_resolved 	= count($ticket3);
 	<hr/>
 	<table>
 	<tr>
-		<td><img src="images/helpdesk.png" alt="Helpdesk Welcome" width="300px" height="173px" align="top" title="Helpdesk Welcome"></td>
+		<td><img src="https://storage.googleapis.com/portalhc-statics-1/images/helpdesk.png" alt="Helpdesk Welcome" width="300px" height="173px" align="top" title="Helpdesk Welcome"></td>
 		<td><h1 class="content">Welcome to HC3 System</h1>
 		<ul>
 		<?php

@@ -12,7 +12,7 @@ $tickets_count 	= count($tickets);
 	<title>My Tickets</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 	<style type="text/css">
-		body{background-image:url('images/corner.jpg');background-repeat:no-repeat;background-attachment:fixed;}
+		body{background-image:url('https://storage.googleapis.com/portalhc-statics-1/images/corner.jpg');background-repeat:no-repeat;background-attachment:fixed;}
 		.breadcrumb{font-size:12px;color:#0000A0;font-family: Arial, Helvetica, sans-serif;}
 	</style>
   	<link rel="stylesheet" type="text/css" href="css/datatable.css" />

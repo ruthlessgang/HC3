@@ -11,7 +11,7 @@ $tickets_count 	= count($tickets);
 	<title>Popular Solution</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 	<style type="text/css">
-		body{margin:10px;background-image:url('images/corner.jpg');background-repeat:no-repeat;background-attachment:fixed;}
+		body{margin:10px;background-image:url('https://storage.googleapis.com/portalhc-statics-1/images/corner.jpg');background-repeat:no-repeat;background-attachment:fixed;}
 	</style>
   	<link rel="stylesheet" type="text/css" href="css/datatable.css" />
 	<link rel="stylesheet" type="text/css" href="css/jquery-ui.css" />

@@ -1,7 +1,7 @@
 <?php 
 ob_start(); // Added to avoid a common error of 'header already sent'
 session_start();
-require_once 'connect/database.php';
+require_once 'connect/databaseGCP.php';
 function my_autoload($class)
 {   $filename = 'classes/'.$class.'.php';
 	include_once $filename;
